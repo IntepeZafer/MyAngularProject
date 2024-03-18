@@ -11,14 +11,13 @@ export class ProductListComponent implements OnInit {
 
   products : Product[];
   productRepository : ProductRepository;
+  selectedProduct : Product | null;
 
   constructor() {
     this.productRepository = new ProductRepository();
     this.products = this.productRepository.getProducts();
   }
 
-  ngOnInit(): void {
-  }
-  
-  
+  ngOnInit(): void {}
 }
+    

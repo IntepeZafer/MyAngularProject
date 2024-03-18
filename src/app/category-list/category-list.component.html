@@ -1,1 +1,5 @@
-<p>category-list works!</p>
+<div class="list-group">
+    <a *ngFor="let category of categories" 
+    href="#" (click)="selectCategory(category)" 
+    class="list-group-item list-group-item-action" [class.active]="category == selectedCategory">{{category.name}}</a>
+</div>

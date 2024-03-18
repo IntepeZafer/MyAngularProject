@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductComponent } from './product/product.component';
+import { ProductComponent } from './product-list/product/product.component';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
     NavbarComponent,
     ProductListComponent,
     ProductComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
