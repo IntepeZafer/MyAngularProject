@@ -22,7 +22,7 @@ export class ProductRepository{
         },
         {
           id : 3,
-          categoryId : 1,
+          categoryId : 3,
           price : 30000,
           name : "Iphone 13",
           isActive : true,

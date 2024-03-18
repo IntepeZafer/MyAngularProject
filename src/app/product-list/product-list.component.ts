@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductRepository } from '../models/product-repository';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'product-list',
@@ -11,13 +12,20 @@ export class ProductListComponent implements OnInit {
 
   products : Product[];
   productRepository : ProductRepository;
-  selectedProduct : Product | null;
 
-  constructor() {
+  constructor(private route : ActivatedRoute) {
     this.productRepository = new ProductRepository();
     this.products = this.productRepository.getProducts();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      if(params["categoryId"]){
+        this.products = this.productRepository.getProductsCategoryById(params["categoryId"]);
+      }else{
+        this.products = this.productRepository.getProducts();
+      }
+    })
+  }
 }
     

@@ -16,10 +16,16 @@ export class CategoryListComponent implements OnInit {
     this.categories = this.categoryRepository.getCategories();
   }
 
-  ngOnInit(): void {
-  }
-  selectCategory(category : Category){
-    this.selectedCategory = category;
+  ngOnInit(): void {}
+  displayAll = true;
+  selectCategory(category ?: Category){
+    if(category){
+      this.selectedCategory = category;
+      this.displayAll = false;
+    }else{
+      this.selectedCategory = null;
+      this.displayAll = true;
+    }
   }
 
 }
