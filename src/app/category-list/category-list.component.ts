@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from '../models/category';
+import { CategoryRepository } from '../models/category-repository';
 
 @Component({
-  selector: 'app-category-list',
+  selector: 'category-list',
   templateUrl: './category-list.component.html',
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit {
 
-  constructor() { }
+  categories : Category[] = [];
+  categoryRepository : CategoryRepository;
+
+  constructor() {
+    this.categoryRepository = new CategoryRepository();
+    this.categories = this.categoryRepository.getCategories();
+  }
 
   ngOnInit(): void {
   }
